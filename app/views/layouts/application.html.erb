@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MembersOnly</title>
+    <title>Members Only, the best stories!</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,8 +11,58 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <% if flash[:notice] %>
+  		<div class="notification is-primary global-notification">
+  			<p class="notice"><%= notice %></p>
+  		</div>
+  	<% end %>
+  	<% if flash[:alert] %>
+  		<div class="notification is-danger global-notification">
+  			<p class="alert"><%= alert %></p>
+  		</div>
+  	<% end %>
+
+    <nav class="navbar">
+      <div class="navbar-brand">
+        <%= link_to root_path, class: "navbar-item" do %>
+          <h1 class="title">Members Only!</h1>
+        <% end %>
+        <div class="navbar-burger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+      <div class="navbar-menu">
+        <div class="navbar-start">
+          <div class="navbar-item">
+            About
+          </div>
+        </div>
+        <div class="navbar-end">
+          <% if user_signed_in? %>
+            <div class="navbar-item">
+              <p class="control"><%= link_to current_user.name, edit_user_registration_path, class: "" %></p>
+            </div>
+            <div class="navbar-item">
+              <p ><%= link_to "Logout", destroy_user_session_path, method: :delete, class: " " %></p>
+            </div>
+          <% else %>
+            <div class="navbar-item">
+              <p class="control"><%= link_to 'Sign In', new_user_session_path, class: "" %></p>
+            </div>
+            <div class="navbar-item">
+              <p class="control"><%= link_to 'Sign Up', new_user_registration_path, class: "" %></p>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </nav>
     <%= yield %>
+    <footer>
+      <div class="content has-text-centered">
+        <p><strong>Members Only!</strong> by <a href="https://github.com/NotAtec">Jeroen Brinkhorst</a></p>
+      </div>
+    </footer>
   </body>
 </html>
