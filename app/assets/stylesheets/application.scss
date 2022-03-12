@@ -16,15 +16,15 @@
 
  @import "bulma";
 
-html,
-body {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
+  html,
+  body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+  }
 
-body > footer {
-    margin-top: auto;
-    padding: 1.5rem;
-    background-color: hsl(0, 0, 98%);
-}
+  body > footer {
+      margin-top: auto;
+      padding: 1.5rem;
+      background-color: hsl(0, 0, 98%);
+  }

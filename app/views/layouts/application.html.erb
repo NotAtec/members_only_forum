@@ -22,10 +22,10 @@
   		</div>
   	<% end %>
 
-    <nav class="navbar">
+    <nav class="navbar has-background-primary">
       <div class="navbar-brand">
         <%= link_to root_path, class: "navbar-item" do %>
-          <h1 class="title">Members Only!</h1>
+          <h1 class="title has-text-white">Members Only!</h1>
         <% end %>
         <div class="navbar-burger">
           <span></span>
@@ -42,17 +42,17 @@
         <div class="navbar-end">
           <% if user_signed_in? %>
             <div class="navbar-item">
-              <p class="control"><%= link_to current_user.name, edit_user_registration_path, class: "" %></p>
+              <p class="control"><%= link_to current_user.name, edit_user_registration_path, class: "has-text-white" %></p>
             </div>
             <div class="navbar-item">
-              <p ><%= link_to "Logout", destroy_user_session_path, method: :delete, class: " " %></p>
+              <p ><%= link_to "Logout", destroy_user_session_path, method: :delete, class: "has-text-white" %></p>
             </div>
           <% else %>
             <div class="navbar-item">
-              <p class="control"><%= link_to 'Sign In', new_user_session_path, class: "" %></p>
+              <p class="control"><%= link_to 'Sign In', new_user_session_path, class: "has-text-white" %></p>
             </div>
             <div class="navbar-item">
-              <p class="control"><%= link_to 'Sign Up', new_user_registration_path, class: "" %></p>
+              <p class="control"><%= link_to 'Sign Up', new_user_registration_path, class: "has-text-white" %></p>
             </div>
           <% end %>
         </div>
