@@ -1,2 +1,14 @@
-<h1>Posts#new</h1>
-<p>Find me in app/views/posts/new.html.erb</p>
+<h1>New Post</h1>
+
+<%= simple_form_for @post do |f| %>
+  <%= f.input :title, 
+              label: 'Your Post Title:', 
+              autofocus: true,
+              required: true %>
+  <%= f.input :body,
+              label: 'Your Post Text:',
+              required: true,
+              input_html: { class: "textarea" }%>
+
+  <%= f.button :submit%>
+<% end %>
