@@ -1,0 +1,19 @@
+<div class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-half">
+        <h1 class="title"><%= @post.title %></h1>
+        <div class="content">
+          <% if user_signed_in? %>
+            <small>By: <%= @post.user.username%></small>
+          <% else %>
+            <small>Sign in to see who posted this!</small>
+          <% end %>
+        </div>
+        <div class="content">
+          <%= @post.body %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
