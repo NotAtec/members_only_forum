@@ -15,7 +15,7 @@
               <p>
                 <strong><%= post.title %></strong>
                 <% if user_signed_in? %>
-                  <small><%= post.user_id.username%></small>
+                  <small><%= post.user.username%></small>
                 <% else %>
                   <small>Sign in to see who posted this!</small>
                 <% end %>
