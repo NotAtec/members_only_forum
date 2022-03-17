@@ -1,9 +1,10 @@
 <div class="column is-half">
-    <% if user_signed_in? %>
+  Feed
+  <% if user_signed_in? %>
       <!-- Code to show creation box -->
-    <% end %>
+  <% end %>
 
-    <% @posts.each do | post | %>
+  <% @posts.each do | post | %>
       <div class="box">
         <article class="media">
           <figure class="media-left">
@@ -41,5 +42,5 @@
           </div>
         </article>
       </div>
-    <% end %>
+  <% end %>
   </div>
