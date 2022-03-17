@@ -27,3 +27,7 @@
       padding: 1.5rem;
       background-color: hsl(0, 0, 98%);
   }
+  
+  .notification:not(:last-child) {
+	margin-bottom: 0;
+  }

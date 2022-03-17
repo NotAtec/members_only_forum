@@ -2,11 +2,11 @@
     <div class="columns">
       <% if user_signed_in? %>
         <%= render 'profile' %>
+        <%= render 'feed' %>
+        <%= render 'recommended' %>
       <% else %>
-        <!-- code for else -->
-      <% end %>
-
-      <%= render 'feed' %>
-      <%= render 'recommended' %>
+        <%= render 'recommended' %>
+        <%= render 'feed' %>
+      <% end %>  
     </div>
 </section>

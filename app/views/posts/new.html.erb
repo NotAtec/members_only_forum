@@ -1,13 +1,10 @@
-<h1>New Post</h1>
-
-<%= simple_form_for(@post) do |f| %>
-  <%= f.input :title, 
-              label: 'Your Post Title:', 
-              autofocus: true,
-              required: true %>
-  <%= f.input :body,
-              label: 'Your Post Text:',
-              required: true%>
-
-  <%= f.button :submit%>
-<% end %>
+<div class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-half">
+        <h1 class="title">Create A New Post!</h1>
+        <%= render 'form' %>
+      </div>
+    </div>
+  </div>
+</div>
