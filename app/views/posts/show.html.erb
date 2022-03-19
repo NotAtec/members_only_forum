@@ -12,6 +12,13 @@
         </div>
         <div class="content">
           <%= @post.body %>
+          <br>
+          <br>
+          <% if user_signed_in? %>
+            <% if current_user == @post.user %>
+              <%= button_to "Delete Post", post_path, data: { confirm: "Are you sure?" }, method: :delete, class: "button is-danger" %>
+            <% end %>
+          <% end %>
         </div>
       </div>
     </div>
