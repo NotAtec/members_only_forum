@@ -9,23 +9,21 @@
             <div class="control">
               <%= f.input :username, 
                           label: "Username:",
-                          hint: "Leave blank if you do not want to change your username. ",
                           autofocus: true,
                           input_html: { class: "input" },
                           wrapper: false,
                           label_html: { class: "label" },
-                          required: false %>
+                          required: true %>
             </div>
           </div>
           <div class="field">
             <div class="control">
               <%= f.input :email, 
                           label: "Email:", 
-                          hint: "Leave blank if you do not want to change your email. ",
                           input_html: { autocomplete: "email", class: "input" }, 
                           wrapper: false, 
                           label_html: { class: "label" }, 
-                          required: false %>
+                          required: true %>
             </div>
           </div>
           <div class="field">
@@ -59,12 +57,22 @@
                             label_html: { class: "label" } %>
             </div>
           </div>
-          <%= f.button :submit, "Update", class: "button is-primary", style: "width: 100%"%>
+
+          <% if current_user.username == 'Odin' %>
+            <%= f.button :submit, "Update", disabled: true, class: "button is-primary", style: "width: 100%"%>
+          <% else %>
+            <%= f.button :submit, "Update", class: "button is-primary", style: "width: 100%"%>
+          <% end %>
+          
         <% end %>
         <br>
         <%= link_to 'Back', root_path, class: "button is-dark level-item" %>
         <br>
-        <p>Unhappy? <%= button_to "Delete my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "button is-danger" %></p>
+        <% if current_user.username == 'Odin' %>
+          <p>Unhappy? <%= button_to "Delete my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, disabled: true, class: "button is-danger" %></p>
+        <% else %>
+          <p>Unhappy? <%= button_to "Delete my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "button is-danger" %></p>
+        <% end %>
       </div>
     </div>
   </div>
