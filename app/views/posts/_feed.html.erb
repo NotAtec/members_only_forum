@@ -24,9 +24,13 @@
               </p>
             </div>
           </div>
-          <div class="media-right">
-            <button class="delete"></button>
-          </div>
+          <% if user_signed_in? %>
+            <% if current_user == post.user %>
+              <div class="media-right">
+                <%= button_to '', post, method: :delete, data: { turbo_confirm: 'Are you sure?' }, class: 'delete' %>
+              </div>
+            <% end %>
+          <% end %>
         </article>
       </div>
   <% end %>
