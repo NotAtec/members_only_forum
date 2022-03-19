@@ -30,7 +30,7 @@
   
   .notification:not(:last-child) {
 	margin-bottom: 0;
-  animation: moveout 1s 500ms ease forwards;
+  animation: moveout 1s 1s ease forwards;
   position: absolute;
   width: 100vw;
   z-index: 31;
