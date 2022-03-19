@@ -1,24 +1,30 @@
-# README
+# Members Only (Rails Forum)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A forum built on Rails 7.0, HTML/CSS and JS.
 
-Things you may want to cover:
+The forum works on a principle that posts can be seen by everyone, but the author of a post can only be seen when you are logged in.
 
-* Ruby version
+To post a story, you have to be logged in on an account.
 
-* System dependencies
+[Live Preview](https://afternoon-tor-77778.herokuapp.com/) <--
 
-* Configuration
+## Features
 
-* Database creation
+- Recommended Posts (Selects 5 random posts on a sidebar)
+- Railsy webpage building, so footer & headers are generic and created in `application.html.erb`
+- Partials for forms, feed, and profile.
+- A simple profile when logged in, with a count of created posts.
+- Clickable posts on the main page, which link to the full post.
+- A generated feed, with recent posts at the top.
+- UI created with Bulma.io CSS library
+- User authentication by email & password, handled by the Devise gem
 
-* Database initialization
+## Built With
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Frontend: HTML5 / CSS3 / JS
+- Backend: Rails 7.0
+  - Bulma.io for Rails
+  - Simple Form
+  - Devise
+  - Better Errors
+  - Guard & Guard Livereload
